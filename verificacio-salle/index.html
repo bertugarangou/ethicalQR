@@ -2,42 +2,41 @@
 Add-Type -AssemblyName "System.Windows.Forms"
 
 
-
 ######################
-
 
 # Function to show a message box
 function Show-MessageBox {
     [System.Windows.Forms.MessageBox]::Show("Has sigut infectat per un virus lassalllista", "Alert", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)
 }
+
 Start-Sleep -Seconds 5
-# Run multiple instances of message box in parallel
+# Run multiple instances of message box sequentially (not as background jobs)
 for ($i = 0; $i -lt 2; $i++) {
-    Start-Job -ScriptBlock { Show-MessageBox }
+    Show-MessageBox
     Start-Sleep -Seconds 1
 }
 Start-Sleep -Seconds 5
 for ($i = 0; $i -lt 3; $i++) {
-    Start-Job -ScriptBlock { Show-MessageBox }
+    Show-MessageBox
     Start-Sleep -Seconds 1
 }
 Start-Sleep -Seconds 5
 for ($i = 0; $i -lt 4; $i++) {
-    Start-Job -ScriptBlock { Show-MessageBox }
+    Show-MessageBox
 }
 Start-Process "https://qr.carquinyolis.cat"
 Start-Sleep -Seconds 5
 for ($i = 0; $i -lt 5; $i++) {
-    Start-Job -ScriptBlock { Show-MessageBox }
+    Show-MessageBox
 }
 Start-Sleep -Seconds 5
 for ($i = 0; $i -lt 6; $i++) {
-    Start-Job -ScriptBlock { Show-MessageBox }
+    Show-MessageBox
 }
 Start-Process "https://qr.carquinyolis.cat"
 Start-Sleep -Seconds 5
 for ($i = 0; $i -lt 10; $i++) {
-    Start-Job -ScriptBlock { Show-MessageBox }
+    Show-MessageBox
 }
 
 ######################
