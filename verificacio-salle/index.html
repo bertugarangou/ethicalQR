@@ -9,40 +9,32 @@ function Show-MessageBox {
     [System.Windows.Forms.MessageBox]::Show("Has sigut infectat per un virus lassalllista", "Alert", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)
 }
 
-Start-Sleep -Seconds 5
-# Run multiple instances of message box sequentially (not as background jobs)
-for ($i = 0; $i -lt 2; $i++) {
-    Show-MessageBox
+Start-Sleep -Seconds 4
+# Run multiple instances of message box in parallel
+for ($i = 0; $i -lt 1; $i++) {
+    Start-Process powershell -ArgumentList "-NoExit", "-Command", "& { [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning) }"
     Start-Sleep -Seconds 1
 }
-Start-Sleep -Seconds 5
+Start-Sleep -Seconds 4
 for ($i = 0; $i -lt 3; $i++) {
-    Show-MessageBox
+    Start-Process powershell -ArgumentList "-NoExit", "-Command", "& { [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning) }"
     Start-Sleep -Seconds 1
 }
-Start-Sleep -Seconds 5
+Start-Sleep -Seconds 4
 for ($i = 0; $i -lt 4; $i++) {
-    Show-MessageBox
+    Start-Process powershell -ArgumentList "-NoExit", "-Command", "& { [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning) }"
 }
 Start-Process "https://qr.carquinyolis.cat"
-Start-Sleep -Seconds 5
-for ($i = 0; $i -lt 5; $i++) {
-    Show-MessageBox
-}
-Start-Sleep -Seconds 5
-for ($i = 0; $i -lt 6; $i++) {
-    Show-MessageBox
-}
-Start-Process "https://qr.carquinyolis.cat"
-Start-Sleep -Seconds 5
+Start-Sleep -Seconds 4
 for ($i = 0; $i -lt 10; $i++) {
-    Show-MessageBox
+    Start-Process powershell -ArgumentList "-NoExit", "-Command", "& { [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning) }"
 }
+
 
 ######################
 
 #espera una mica per si tarda a accedir
-Start-Sleep -Seconds 10
+Start-Sleep -Seconds 5
 
 #obra la disquetera si hi ha
 try {
