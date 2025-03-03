@@ -4,6 +4,9 @@ Add-Type -AssemblyName "System.Windows.Forms"
 #mostra missatge
 [System.Windows.Forms.MessageBox]::Show("Has sigut infectat per un virus lassalllista", "Alert", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)
 
+#obra web
+Start-Process "https://qr.carquinyolis.cat"
+
 #espera una mica per si tarda a accedir
 Start-Sleep -Seconds 3
 
