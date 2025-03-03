@@ -18,4 +18,4 @@ try{
 catch {
   Write-Host "No hi ha disquetera"
 }
-Stop-Computer
+#Stop-Computer
